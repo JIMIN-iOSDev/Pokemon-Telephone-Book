@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Alamofire
 
 class TableViewCell: UITableViewCell {
     
@@ -61,13 +62,21 @@ class TableViewCell: UITableViewCell {
         }
         
         namelabel.snp.makeConstraints {
-            $0.leading.equalTo(pokemonimageView.snp.trailing).offset(10)
+            $0.leading.equalTo(pokemonimageView.snp.trailing).offset(20)
             $0.centerY.equalToSuperview()
+            $0.width.equalTo(70)
         }
         
         numberlabel.snp.makeConstraints {
             $0.leading.equalTo(namelabel.snp.trailing).offset(20)
             $0.centerY.equalToSuperview()
         }
+    }
+    
+    public func configureCell(phoneBook: PhoneBook) {
+        guard let image = phoneBook.profileImage else { return }
+        pokemonimageView.image = UIImage(data: image)
+        namelabel.text = phoneBook.name
+        numberlabel.text = phoneBook.phoneNumber
     }
 }

@@ -11,6 +11,8 @@ import Alamofire
 
 class PhoneBookViewController: UIViewController {
     
+    private var phoneNumberData = PhoneNumberData()
+    
     // 이미지
     private let pokemonImage: UIImageView = {
         let image = UIImageView()
@@ -22,7 +24,7 @@ class PhoneBookViewController: UIViewController {
     }()
     
     // 버튼
-    private let randomimageButton: UIButton = {
+    private lazy var randomimageButton: UIButton = {
         let button = UIButton()
         button.setTitle("랜덤 이미지 생성", for: .normal)
         button.setTitleColor(.gray, for: .normal)
@@ -113,7 +115,15 @@ class PhoneBookViewController: UIViewController {
     
     // 적용 버튼 눌렀을 때
     @objc private func buttonTapped() {
+        guard let name = nameTextView.text, !name.isEmpty,
+              let phoneNumber = numberTextView.text, !phoneNumber.isEmpty else { return }
         
+        let profileImageData = pokemonImage.image?.jpegData(compressionQuality: 0.8)
+        let newContact = PhoneBook(profileImage: profileImageData, name: name, phoneNumber: phoneNumber)
+        
+        phoneNumberData.addContact(newContact)
+        
+        navigationController?.popViewController(animated: true)
     }
     
     private func configureUI() {

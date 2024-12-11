@@ -16,6 +16,8 @@
 		EC64DF5B2D091AD5009E2639 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64DF512D091AD5009E2639 /* ViewController.swift */; };
 		EC64DF5C2D091AD5009E2639 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64DF502D091AD5009E2639 /* TableViewCell.swift */; };
 		EC64DF732D096A69009E2639 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EC64DF722D096A69009E2639 /* Alamofire */; };
+		EC6625102D09A1950097F9BB /* PhoneBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC66250F2D09A18F0097F9BB /* PhoneBook.swift */; };
+		EC6625122D09A57A0097F9BB /* PhoneNumberData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6625112D09A5670097F9BB /* PhoneNumberData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		EC64DF502D091AD5009E2639 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		EC64DF512D091AD5009E2639 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EC64DF5E2D091FF5009E2639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EC66250F2D09A18F0097F9BB /* PhoneBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBook.swift; sourceTree = "<group>"; };
+		EC6625112D09A5670097F9BB /* PhoneNumberData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +72,10 @@
 				EC64DF482D091AD5009E2639 /* AppDelegate.swift */,
 				EC64DF4F2D091AD5009E2639 /* SceneDelegate.swift */,
 				EC64DF4D2D091AD5009E2639 /* PhoneBookViewController.swift */,
+				EC6625112D09A5670097F9BB /* PhoneNumberData.swift */,
 				EC64DF502D091AD5009E2639 /* TableViewCell.swift */,
 				EC64DF512D091AD5009E2639 /* ViewController.swift */,
+				EC66250F2D09A18F0097F9BB /* PhoneBook.swift */,
 			);
 			path = PokemonTelephoneBook;
 			sourceTree = "<group>";
@@ -155,7 +161,9 @@
 			files = (
 				EC64DF582D091AD5009E2639 /* PhoneBookViewController.swift in Sources */,
 				EC64DF592D091AD5009E2639 /* AppDelegate.swift in Sources */,
+				EC6625122D09A57A0097F9BB /* PhoneNumberData.swift in Sources */,
 				EC64DF5A2D091AD5009E2639 /* SceneDelegate.swift in Sources */,
+				EC6625102D09A1950097F9BB /* PhoneBook.swift in Sources */,
 				EC64DF5B2D091AD5009E2639 /* ViewController.swift in Sources */,
 				EC64DF5C2D091AD5009E2639 /* TableViewCell.swift in Sources */,
 			);

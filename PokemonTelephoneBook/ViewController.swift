@@ -11,6 +11,8 @@ import Alamofire
 
 class ViewController: UIViewController {
 
+    private let phoneNumberData = PhoneNumberData()
+    
     // 제목
     private let listLabel: UILabel = {
         let label = UILabel()
@@ -22,7 +24,7 @@ class ViewController: UIViewController {
     }()
     
     // 추가버튼
-    private let addButton: UIButton = {
+    private lazy var addButton: UIButton = {
         let button = UIButton()
         button.setTitle("추가", for: .normal)
         button.setTitleColor(.gray, for: .normal)
@@ -36,7 +38,7 @@ class ViewController: UIViewController {
         let tableView = UITableView()
         tableView.backgroundColor = .white
         tableView.delegate = self
-//        tableView.dataSource = self
+        tableView.dataSource = self
         tableView.register(TableViewCell.self, forCellReuseIdentifier: TableViewCell.id)
         return tableView
     }()
@@ -44,6 +46,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        phoneNumberData.loadContacts()
+        tableView.reloadData()
     }
 
     // 네비게이션 연결
@@ -70,8 +81,9 @@ class ViewController: UIViewController {
         }
         
         tableView.snp.makeConstraints {
-            $0.centerX.equalToSuperview()
-            $0.top.equalTo(listLabel.snp.bottom).offset(200)
+            $0.top.equalTo(listLabel.snp.bottom)
+            $0.bottom.equalToSuperview().inset(100)
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
     }
     
@@ -86,13 +98,12 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCell.id) as? TableViewCell else { return UITableViewCell() }
-//        cell.configureCell()
+        cell.configureCell(phoneBook: phoneNumberData.contacts[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        dataSource.count
-        return 0     //삭제
+        phoneNumberData.contacts.count
     }
 }
 
