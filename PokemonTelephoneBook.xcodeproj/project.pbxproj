@@ -15,6 +15,7 @@
 		EC64DF5A2D091AD5009E2639 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64DF4F2D091AD5009E2639 /* SceneDelegate.swift */; };
 		EC64DF5B2D091AD5009E2639 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64DF512D091AD5009E2639 /* ViewController.swift */; };
 		EC64DF5C2D091AD5009E2639 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC64DF502D091AD5009E2639 /* TableViewCell.swift */; };
+		EC64DF732D096A69009E2639 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EC64DF722D096A69009E2639 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC64DEAE2D06FBF9009E2639 /* SnapKit in Frameworks */,
+				EC64DF732D096A69009E2639 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,13 +62,13 @@
 		EC64DF522D091AD5009E2639 /* PokemonTelephoneBook */ = {
 			isa = PBXGroup;
 			children = (
-				EC64DF482D091AD5009E2639 /* AppDelegate.swift */,
 				EC64DF492D091AD5009E2639 /* Assets.xcassets */,
-				EC64DF4C2D091AD5009E2639 /* LaunchScreen.storyboard */,
-				EC64DF4D2D091AD5009E2639 /* PhoneBookViewController.swift */,
-				EC64DF4F2D091AD5009E2639 /* SceneDelegate.swift */,
-				EC64DF502D091AD5009E2639 /* TableViewCell.swift */,
 				EC64DF5E2D091FF5009E2639 /* Info.plist */,
+				EC64DF4C2D091AD5009E2639 /* LaunchScreen.storyboard */,
+				EC64DF482D091AD5009E2639 /* AppDelegate.swift */,
+				EC64DF4F2D091AD5009E2639 /* SceneDelegate.swift */,
+				EC64DF4D2D091AD5009E2639 /* PhoneBookViewController.swift */,
+				EC64DF502D091AD5009E2639 /* TableViewCell.swift */,
 				EC64DF512D091AD5009E2639 /* ViewController.swift */,
 			);
 			path = PokemonTelephoneBook;
@@ -90,6 +92,7 @@
 			name = "Pokemon Telephone Book";
 			packageProductDependencies = (
 				EC64DEAD2D06FBF9009E2639 /* SnapKit */,
+				EC64DF722D096A69009E2639 /* Alamofire */,
 			);
 			productName = "Pokemon Telephone Book";
 			productReference = EC64DE942D06FBD6009E2639 /* Pokemon Telephone Book.app */;
@@ -121,6 +124,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				EC64DEAC2D06FBF9009E2639 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				EC64DF712D096A69009E2639 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = EC64DE952D06FBD6009E2639 /* Products */;
@@ -380,6 +384,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		EC64DF712D096A69009E2639 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -387,6 +399,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EC64DEAC2D06FBF9009E2639 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		EC64DF722D096A69009E2639 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EC64DF712D096A69009E2639 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

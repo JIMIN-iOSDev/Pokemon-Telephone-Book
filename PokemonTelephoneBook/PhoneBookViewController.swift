@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Alamofire
 
 class PhoneBookViewController: UIViewController {
     
@@ -25,6 +26,8 @@ class PhoneBookViewController: UIViewController {
         let button = UIButton()
         button.setTitle("랜덤 이미지 생성", for: .normal)
         button.setTitleColor(.gray, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 15)
+        button.addTarget(self, action: #selector(fetchRandomPokemonImage), for: .touchUpInside)
         return button
     }()
     
@@ -46,15 +49,71 @@ class PhoneBookViewController: UIViewController {
         return textView
     }()
     
+    // 적용 버튼
+    private lazy var rightButton: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "적용", style: .plain, target: self, action: #selector(buttonTapped))
+        return button
+    }()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = .white
         self.title = "연락처 추가"
+        self.navigationItem.rightBarButtonItem = self.rightButton
+        
         configureUI()
         
-        pokemonImage.layer.cornerRadius = pokemonImage.bounds.width / 2
+        pokemonImage.layer.cornerRadius = (view.bounds.width / 2) / 2
         pokemonImage.layer.masksToBounds = true
+    }
+    
+    // 랜덤 포켓몬 이미지 가져오기
+    @objc func fetchRandomPokemonImage() {
+        let randomID: Int = .random(in: 1...1000)
+        let url = "https://pokeapi.co/api/v2/pokemon/\(randomID)"
+        
+        AF.request(url).responseDecodable(of: Pokemon.self) { response in
+            switch response.result {
+            case .success(let Pokemon):
+                if let imageURL = Pokemon.sprites.frontDefault {
+                    self.fetchImage(from: imageURL)
+                }
+            case .failure(let error):
+                print("Error fetching data: \(error)")
+            }
+        }
+    }
+    
+    func fetchImage(from url: String) {
+        AF.request(url).responseData { response in
+            switch response.result {
+            case .success(let data):
+                if let image = UIImage(data: data) {
+                    self.pokemonImage.image = image
+                }
+            case .failure(let error):
+                print("Error loading image: \(error)")
+            }
+        }
+    }
+    
+    struct Pokemon: Codable {
+        let sprites: Sprites
+    }
+    
+    struct Sprites: Codable {
+        let frontDefault: String?
+        
+        enum CodingKeys: String, CodingKey {
+            case frontDefault = "front_default"
+        }
+    }
+    
+    // 적용 버튼 눌렀을 때
+    @objc private func buttonTapped() {
+        
     }
     
     private func configureUI() {
@@ -62,9 +121,9 @@ class PhoneBookViewController: UIViewController {
             .forEach { view.addSubview($0) }
         
         pokemonImage.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(150)
+            $0.top.equalToSuperview().offset(130)
             $0.centerX.equalToSuperview()
-            $0.width.height.equalTo(view.bounds.width / 3)
+            $0.width.height.equalTo(view.bounds.width / 2)
         }
         
         randomimageButton.snp.makeConstraints {
