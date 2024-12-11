@@ -19,16 +19,14 @@
 
 /* Begin PBXFileReference section */
 		EC64DE942D06FBD6009E2639 /* Pokemon Telephone Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon Telephone Book.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC64DF462D091AD5009E2639 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EC64DF482D091AD5009E2639 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC64DF492D091AD5009E2639 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EC64DF4A2D091AD5009E2639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC64DF4B2D091AD5009E2639 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC64DF4D2D091AD5009E2639 /* PhoneBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneBookViewController.swift; sourceTree = "<group>"; };
-		EC64DF4E2D091AD5009E2639 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EC64DF4F2D091AD5009E2639 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EC64DF502D091AD5009E2639 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		EC64DF512D091AD5009E2639 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC64DF5E2D091FF5009E2639 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,26 +57,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EC64DF472D091AD5009E2639 /* Pokemon-Telephone-Book */ = {
-			isa = PBXGroup;
-			children = (
-				EC64DF462D091AD5009E2639 /* README.md */,
-			);
-			path = "Pokemon-Telephone-Book";
-			sourceTree = "<group>";
-		};
 		EC64DF522D091AD5009E2639 /* PokemonTelephoneBook */ = {
 			isa = PBXGroup;
 			children = (
-				EC64DF472D091AD5009E2639 /* Pokemon-Telephone-Book */,
 				EC64DF482D091AD5009E2639 /* AppDelegate.swift */,
 				EC64DF492D091AD5009E2639 /* Assets.xcassets */,
-				EC64DF4A2D091AD5009E2639 /* Info.plist */,
 				EC64DF4C2D091AD5009E2639 /* LaunchScreen.storyboard */,
 				EC64DF4D2D091AD5009E2639 /* PhoneBookViewController.swift */,
-				EC64DF4E2D091AD5009E2639 /* README.md */,
 				EC64DF4F2D091AD5009E2639 /* SceneDelegate.swift */,
 				EC64DF502D091AD5009E2639 /* TableViewCell.swift */,
+				EC64DF5E2D091FF5009E2639 /* Info.plist */,
 				EC64DF512D091AD5009E2639 /* ViewController.swift */,
 			);
 			path = PokemonTelephoneBook;
