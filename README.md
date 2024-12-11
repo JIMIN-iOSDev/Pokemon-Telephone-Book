@@ -34,7 +34,8 @@
 ## API 명세서
 - GET 메서드 사용
 - URL : https://pokeapi.co/api/v2/pokemon/{1~1000사이의랜덤숫자입력}
-- JSON Response 형태 : {
+- JSON Response 형태 :
+  {
   "id": 25,
   "name": "pikachu",
   "height": 4,
