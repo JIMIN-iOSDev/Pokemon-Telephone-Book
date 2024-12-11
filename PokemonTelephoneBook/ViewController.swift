@@ -46,8 +46,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,7 +70,7 @@ class ViewController: UIViewController {
         
         listLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().offset(100)
+            $0.top.equalToSuperview().offset(90)
         }
         
         addButton.snp.makeConstraints {
@@ -105,10 +103,4 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         phoneNumberData.contacts.count
     }
-}
-
-
-
-#Preview {
-    ViewController()
 }

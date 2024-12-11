@@ -13,7 +13,7 @@ class PhoneBookViewController: UIViewController {
     
     private var phoneNumberData = PhoneNumberData()
     
-    // 이미지
+    // 이미지뷰
     private let pokemonImage: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
@@ -23,7 +23,7 @@ class PhoneBookViewController: UIViewController {
         return image
     }()
     
-    // 버튼
+    // 이미지 생성 버튼
     private lazy var randomimageButton: UIButton = {
         let button = UIButton()
         button.setTitle("랜덤 이미지 생성", for: .normal)
@@ -42,7 +42,7 @@ class PhoneBookViewController: UIViewController {
         return textView
     }()
     
-    // 전번 입력란
+    // 전화번호 입력란
     private let numberTextView: UITextView = {
         let textView = UITextView()
         textView.layer.borderWidth = 1.0
@@ -65,6 +65,7 @@ class PhoneBookViewController: UIViewController {
         self.title = "연락처 추가"
         self.navigationItem.rightBarButtonItem = self.rightButton
         
+        phoneNumberData.loadContacts()
         configureUI()
         
         pokemonImage.layer.cornerRadius = (view.bounds.width / 2) / 2
@@ -125,6 +126,7 @@ class PhoneBookViewController: UIViewController {
         
         navigationController?.popViewController(animated: true)
     }
+    
     
     private func configureUI() {
         [pokemonImage, randomimageButton, nameTextView, numberTextView]

@@ -32,7 +32,7 @@ class TableViewCell: UITableViewCell {
         return label
     }()
     
-    // 전번
+    // 전화번호
     private let numberlabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .white
